@@ -2,11 +2,13 @@
 #близок к числу R (то есть такой элемент AK, для которого величина |AK - R| является
 #минимальной).
 import random
+import sys
 try:
     N = int(input("Введите размеры списка - "))
     R = int(input("Введите число R - "))
 except ValueError:
     print("Ошибка, вы ввели не число")
+    sys.exit()
 A = []
 smallest = None
 for i in range(N+1):
