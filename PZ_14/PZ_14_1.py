@@ -32,7 +32,7 @@ bg="#bfbfbf",
 font=("Arial", 12)
 ).grid(row=3, column=0, sticky=W, padx=60)
 entry_last = Entry(root, width=35)
-entry_last.insert(0, "Smith")
+entry_last.insert(0, "*Smith*")
 entry_last.grid(row=4, column=0, padx=60, pady=5)
 Label(
 root,
@@ -50,7 +50,7 @@ bg="#bfbfbf",
 font=("Arial", 12)
 ).grid(row=7, column=0, sticky=W, padx=60)
 entry_website = Entry(root, width=35)
-entry_website.insert(0, "[www.example.com](http://www.example.com)")
+entry_website.insert(0, "www.example.com")
 entry_website.grid(row=8, column=0, padx=60, pady=5)
 Label(
 root,
@@ -59,6 +59,7 @@ bg="#bfbfbf",
 font=("Arial", 12)
 ).grid(row=9, column=0, sticky=W, padx=60)
 entry_password = Entry(root, width=35)
+entry_password.insert(0, "8-10 characters")
 entry_password.grid(row=10, column=0, padx=60, pady=5)
 Label(
 root,
@@ -67,6 +68,7 @@ bg="#bfbfbf",
 font=("Arial", 12)
 ).grid(row=11, column=0, sticky=W, padx=60)
 entry_confirm = Entry(root, width=35)
+entry_confirm.insert(0, "Type your password again")
 entry_confirm.grid(row=12, column=0, padx=60, pady=5)
 button = Button(root, text="Sign Up")
 button.grid(row=13, column=0, sticky=W, padx=60, pady=15)
