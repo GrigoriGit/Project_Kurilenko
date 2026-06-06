@@ -1,0 +1,35 @@
+#Создайте базовый класс "Фигура" со свойствами "ширина" и "высота".
+#От этого класса унаследуйте классы "Прямоугольник" и "Квадрат".
+#Для класса "Квадрат" переопределите методы, связанные с вычислением площади и периметра.
+class Figure:
+    def __init__(self, shirina, visota):
+        self.shirina = shirina
+        self.visota = visota
+    def ploshad(self):
+        return self.shirina * self.visota
+    def perimetr(self):
+        return self.shirina * 2 + self.visota * 2
+class Priamougolnik(Figure):
+    def display(self):
+        print("Периметр:", str(self.perimetr()) + ",", "Площадь:", self.ploshad())
+class Kvadrat(Figure):
+    def ploshad(self):
+        if self.shirina == self.visota:
+            return self.shirina ** 2
+        else:
+            return "Это не квадрат"
+    def perimetr(self):
+        if self.shirina == self.visota:
+            return self.shirina * 4
+        else:
+            return "Это не квадрат"
+kvadrat1 = Kvadrat(10, 10)
+kvadrat2 = Kvadrat(20, 22)
+priamougolnik1 = Priamougolnik(30, 43)
+priamougolnik2 = Priamougolnik(24, 42)
+priamougolnik1.display()
+priamougolnik2.display()
+print(kvadrat1.ploshad())
+print(kvadrat1.perimetr())
+print(kvadrat2.ploshad())
+print(kvadrat2.perimetr())
