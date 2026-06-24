@@ -1,25 +1,17 @@
 #В матрице найти сумму и произведение элементов строки N (N задать с клавиатуры).
 rows = int(input("Введите количество строк матрицы: "))
 cols = int(input("Введите количество столбцов матрицы: "))
-matrix = []
-for i in range(rows):
-    row = []
-    for j in range(cols):
-        row.append(i * cols + j + 1)
-    matrix.append(row)
+matrix = [[i * cols + j + 1 for j in range(cols)] for i in range(rows)]
 print("Исходная матрица:")
-for i in range(rows):
-    for j in range(cols):
-        print(matrix[i][j], end=' ')
-    print()
-N = int(input("Введите номер строки N (от 0 до " + str(rows-1) + "): "))
+for row in matrix:
+    print(*row)
+N = int(input(f"Введите номер строки N (от 0 до {rows - 1}): "))
 if 0 <= N < rows:
-    row_sum = 0
-    for j in range(cols):
-        row_sum = row_sum + matrix[N][j]
+    target_row = matrix[N]    
+    row_sum = sum(target_row)   
     row_product = 1
-    for j in range(cols):
-        row_product = row_product * matrix[N][j]
+    for num in target_row:
+        row_product *= num
     print("Сумма элементов строки", N, ":", row_sum)
     print("Произведение элементов строки", N, ":", row_product)
 else:
